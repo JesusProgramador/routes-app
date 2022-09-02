@@ -25,6 +25,8 @@ export const PermissionsProvider = ({children}) => {
         return;
       }
       checkLocationPermission();
+
+      return () => AppState.removeEventListener('change');
     });
   }, []);
 
